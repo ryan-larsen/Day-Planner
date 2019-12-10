@@ -9,3 +9,6 @@ $(document).ready(function () {
 
 
 })
+
+// Need to use moments to set hour of the object they pass into the input forms
+
