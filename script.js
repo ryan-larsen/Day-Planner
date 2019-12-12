@@ -1,7 +1,19 @@
 $(document).ready(function () {
     var now = moment().format('MMMM Do YYYY, h:mm:ss a') 
+    $('#date').html(now)
 
-  $('#date').html(now)
+    var currentHour = moment().hours()
+
+  var h1V = $('h1')
+  if (h1V.val == currentHour) {
+    h1V.addClass('.present')
+  } else if (h1V < currentHour) {
+    h1V.addClass('.past')
+  } else if (h1V > currentHour) {
+    h1V.addClass('.future')
+  }
+
+  
 
 // Put inputs for each time
 $('#saveBtn4a').on('click', function(event) {
