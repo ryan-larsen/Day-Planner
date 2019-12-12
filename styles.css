@@ -4,6 +4,11 @@ body {
     height: 100vh;
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
+    background-color: rgb(79, 172, 248);
+}
+
+div {
+    background-color: azure;
 }
 
 header {
@@ -37,7 +42,6 @@ header {
 
 .row {
     margin: auto;
-    height: 20%;
     width: 90%;
     border: 2px solid black;
 }
@@ -47,4 +51,9 @@ header {
     margin: 0;
     display: inline-block;
     padding: 30px;
+}
+
+.tasks {
+    display: inline-block;
+    
 }
