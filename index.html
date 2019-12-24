@@ -2,217 +2,100 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Day Planner</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <title>Work Day Scheduler</title>
 </head>
 
 <body>
-    <header>
-        <h1 id="date" class="date"></h1>
-    </header>
-    <div id="4am" class="row">
-        <h1 class="rowHead">4am</h1>
-        <form class="formBox" action="">
-            <input id="userInput4a" type="text" class="userInput" placeholder="Add items here">
-            <input class="saveBtn" id="saveBtn4a" class="saveBtn" type="submit" value="Save">
-        </form>
-        <div id="task4am" class="tasks"></div>
+  <header class="jumbotron">
+    <h1 class="display-3">Work Day Scheduler</h1>
+    <p class="lead">A simple calendar app for scheduling your work day</p>
+    <p id="currentDay" class="lead"></p>
+  </header>
+  <div class="container">
+    <div id="hour-9" class="row time-block">
+      <div class="col-md-1 hour">
+        9AM
+      </div>
+      <textarea class="col-md-10 description">
+      </textarea>
+      <button class="btn saveBtn col-md-1"><i class="fas fa-save"></i></button>
     </div>
-    <div id="5am" class="row">
-        <h1 class="rowHead">5am</h1>
-        <form class="formBox" action="">
-            <input id="userInput5a" type="text" class="userInput" placeholder="Add items here">
-            <input class="saveBtn" id="saveBtn5a" type="submit" value="Save">
-        </form>
-        <div id="task5am" class="tasks"></div>
+    <div id="hour-10" class="row time-block">
+      <div class="col-md-1 hour">
+        10AM
+      </div>
+      <textarea class="col-md-10 description">
+      </textarea>
+      <button class="btn saveBtn col-md-1"><i class="fas fa-save"></i></button>
     </div>
-    <div id="6am" class="row">
-        <h1 class="rowHead">6am</h1>
-        <form class="formBox" action="">
-            <input id="userInput6a" type="text" class="userInput" placeholder="Add items here">
-            <input class="saveBtn" id="saveBtn6a" type="submit" value="Save">
-        </form>
-        <div id="task6am" class="tasks"></div>
+    <div id="hour-11" class="row time-block">
+      <div class="col-md-1 hour">
+        11AM
+      </div>
+      <textarea class="col-md-10 description">
+      </textarea>
+      <button class="btn saveBtn col-md-1"><i class="fas fa-save"></i></button>
     </div>
-    <div id="7am" class="row">
-        <h1 class="rowHead">7am</h1>
-        <form class="formBox" action="">
-            <input id="userInput7a" type="text" class="userInput" placeholder="Add items here">
-            <input class="saveBtn" id="saveBtn7a" type="submit" value="Save">
-        </form>
-        <div id="task7am" class="tasks"></div>
+    <div id="hour-12" class="row time-block">
+      <div class="col-md-1 hour">
+        12PM
+      </div>
+      <textarea class="col-md-10 description">
+      </textarea>
+      <button class="btn saveBtn col-md-1"><i class="fas fa-save"></i></button>
     </div>
-    <div id="8am" class="row">
-        <h1 class="rowHead">8am</h1>
-        <form class="formBox" action="">
-            <input id="userInput8a" type="text" class="userInput" placeholder="Add items here">
-            <input class="saveBtn" id="saveBtn8a" type="submit" value="Save">
-        </form>
-        <div id="task8am" class="tasks"></div>
+   <div id="hour-13" class="row time-block">
+      <div class="col-md-1 hour">
+        1PM
+      </div>
+      <textarea class="col-md-10 description">
+      </textarea>
+      <button class="btn saveBtn col-md-1"><i class="fas fa-save"></i></button>
     </div>
-    <div id="9am" class="row">
-        <h1 class="rowHead">9am</h1>
-        <form class="formBox" action="">
-            <input id="userInput9a" type="text" class="userInput" placeholder="Add items here">
-            <input class="saveBtn" id="saveBtn9a" type="submit" value="Save">
-        </form>
-        <div id="task9am" class="tasks"></div>
+    <div id="hour-14" class="row time-block">
+      <div class="col-md-1 hour">
+        2PM
+      </div>
+      <textarea class="col-md-10 description">
+      </textarea>
+      <button class="btn saveBtn col-md-1"><i class="fas fa-save"></i></button>
     </div>
-    <div id="10am" class="row">
-        <h1 class="rowHead">10am</h1>
-        <form class="formBox" action="">
-            <input id="userInput10a" type="text" class="userInput" placeholder="Add items here">
-            <input class="saveBtn" id="saveBtn10a" type="submit" value="Save">
-        </form>
-        <div id="task10am" class="tasks"></div>
+    <div id="hour-15" class="row time-block">
+     <div class="col-md-1 hour">
+        3PM
+      </div>
+      <textarea class="col-md-10 description">
+      </textarea>
+      <button class="btn saveBtn col-md-1"><i class="fas fa-save"></i></button>
     </div>
-    <div id="11am" class="row">
-        <h1 class="rowHead">11am</h1>
-        <form class="formBox" action="">
-            <input id="userInput11a" type="text" class="userInput" placeholder="Add items here">
-            <input class="saveBtn" id="saveBtn11a" type="submit" value="Save">
-        </form>
-        <div id="task11am" class="tasks"></div>
+    <div id="hour-16" class="row time-block">
+      <div class="col-md-1 hour">
+        4PM
+      </div>
+      <textarea class="col-md-10 description">
+      </textarea>
+      <button class="btn saveBtn col-md-1"><i class="fas fa-save"></i></button>
     </div>
-    <div id="12pm" class="row">
-        <h1 class="rowHead">12pm</h1>
-        <form class="formBox" action="">
-            <input id="userInput12p" type="text" class="userInput" placeholder="Add items here">
-            <input class="saveBtn" id="saveBtn12p" type="submit" value="Save">
-        </form>
-        <div id="task12pm" class="tasks"></div>
-    </div>
-    <div id="1pm" class="row">
-        <h1 class="rowHead">1pm</h1>
-        <form class="formBox" action="">
-            <input id="userInput1p" type="text" class="userInput" placeholder="Add items here">
-            <input class="saveBtn" id="saveBtn1p" type="submit" value="Save">
-        </form>
-        <div id="task1pm" class="tasks"></div>
-    </div>
-    <div id="2pm" class="row">
-        <h1 class="rowHead">2pm</h1>
-        <form class="formBox" action="">
-            <input id="userInput2p" type="text" class="userInput" placeholder="Add items here">
-            <input class="saveBtn" id="saveBtn2p" type="submit" value="Save">
-        </form>
-        <div id="task2pm" class="tasks"></div>
-    </div>
-    <div id="3pm" class="row">
-        <h1 class="rowHead">3pm</h1>
-        <form class="formBox" action="">
-            <input id="userInput3p" type="text" class="userInput" placeholder="Add items here">
-            <input class="saveBtn" id="saveBtn3p" type="submit" value="Save">
-        </form>
-        <div id="task3pm" class="tasks"></div>
-    </div>
-    <div id="4pm" class="row">
-        <h1 class="rowHead">4pm</h1>
-        <form class="formBox" action="">
-            <input id="userInput4p" type="text" class="userInput" placeholder="Add items here">
-            <input class="saveBtn" id="saveBtn4p" type="submit" value="Save">
-        </form>
-        <div id="task4pm" class="tasks"></div>
-    </div>
-    <div id="5pm" class="row">
-        <h1 class="rowHead">5pm</h1>
-        <form class="formBox" action="">
-            <input id="userInput5p" type="text" class="userInput" placeholder="Add items here">
-            <input class="saveBtn" id="saveBtn5p" type="submit" value="Save">
-        </form>
-        <div id="task5pm" class="tasks"></div>
-    </div>
-    <div id="6pm" class="row">
-        <h1 class="rowHead">6pm</h1>
-        <form class="formBox" action="">
-            <input id="userInput6p" type="text" class="userInput" placeholder="Add items here">
-            <input class="saveBtn" id="saveBtn6p" type="submit" value="Save">
-        </form>
-        <div id="task6pm" class="tasks"></div>
-    </div>
-    <div id="7pm" class="row">
-        <h1 class="rowHead">7pm</h1>
-        <form class="formBox" action="">
-            <input id="userInput7p" type="text" class="userInput" placeholder="Add items here">
-            <input class="saveBtn" id="saveBtn7p" type="submit" value="Save">
-        </form>
-        <div id="task7pm" class="tasks"></div>
-    </div>
-    <div id="8pm" class="row">
-        <h1 class="rowHead">8pm</h1>
-        <form class="formBox" action="">
-            <input id="userInput8p" type="text" class="userInput" placeholder="Add items here">
-            <input class="saveBtn" id="saveBtn8p" type="submit" value="Save">
-        </form>
-        <div id="task8pm" class="tasks"></div>
-    </div>
-    <div id="9pm" class="row">
-            <h1 class="rowHead">9pm</h1>
-            <form class="formBox" action="">
-                <input id="userInput9p" type="text" class="userInput" placeholder="Add items here">
-                <input class="saveBtn" id="saveBtn9p" type="submit" value="Save">
-            </form>
-            <div id="task9pm" class="tasks"></div>
-        </div>
-    <div id="10pm" class="row">
-        <h1 class="rowHead">10pm</h1>
-        <form class="formBox" action="">
-            <input id="userInput10p" type="text" class="userInput" placeholder="Add items here">
-            <input class="saveBtn" id="saveBtn10p" type="submit" value="Save">
-        </form>
-        <div id="task10pm" class="tasks"></div>
-    </div>
-    <div id="11pm" class="row">
-        <h1 class="rowHead">11pm</h1>
-        <form class="formBox" action="">
-            <input id="userInput11p" type="text" class="userInput" placeholder="Add items here">
-            <input class="saveBtn" id="saveBtn11p" type="submit" value="Save">
-        </form>
-        <div id="task11pm" class="tasks"></div>
-    </div>
-    <div id="12am" class="row">
-        <h1 class="rowHead">12am</h1>
-        <form class="formBox" action="">
-            <input id="userInput12a" type="text" class="userInput" placeholder="Add items here">
-            <input class="saveBtn" id="saveBtn12a" type="submit" value="Save">
-        </form>
-        <div id="task12am" class="tasks"></div>
-    </div>
-    <div id="1am" class="row">
-        <h1 class="rowHead">1am</h1>
-        <form class="formBox" action="">
-            <input id="userInput1a" type="text" class="userInput" placeholder="Add items here">
-            <input class="saveBtn" id="saveBtn1a" type="submit" value="Save">
-        </form>
-        <div id="task1am" class="tasks"></div>
-    </div>
-    <div id="2am" class="row">
-        <h1 class="rowHead">2am</h1>
-        <form class="formBox" action="">
-            <input id="userInput2a" type="text" class="userInput" placeholder="Add items here">
-            <input class="saveBtn" id="saveBtn2a" type="submit" value="Save">
-        </form>
-        <div id="task2am" class="tasks"></div>
-    </div>
-    <div id="3am" class="row">
-        <h1 class="rowHead">3am</h1>
-        <form class="formBox" action="">
-            <input id="userInput3a" type="text" class="userInput" placeholder="Add items here">
-            <input class="saveBtn" id="saveBt3a" type="submit" value="Save">
-        </form>
-        <div id="task3am" class="tasks"></div>
+    <div id="hour-17" class="row time-block">
+      <div class="col-md-1 hour">
+        5PM
+      </div>
+      <textarea class="col-md-10 description">
+      </textarea>
+      <button class="btn saveBtn col-md-1"><i class="fas fa-save"></i></button>
     </div>
 
-
-
-    <script src="https://momentjs.com/downloads/moment.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+
+    <script src="./script.js"></script>
 </body>
 
 </html>

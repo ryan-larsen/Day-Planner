@@ -1,284 +1,54 @@
-$(document).ready(function () {
-  //Sets Date and Time
-  var now = moment().format('MMMM Do YYYY, h:mm:ss a')
-  $('#date').html(now)
+$(document).ready(function() {
+  // listen for save button clicks
+  $(".saveBtn").on("click", function() {
+    // get nearby values
+    var value = $(this).siblings(".description").val();
+    var time = $(this).parent().attr("id");
 
-  // To set colors for Times
-  var currentHour = moment().hours()
-  var h1V = $('h1')
-  if (h1V.val() == currentHour) {
-    h1V.addClass('.present')
-  } else if (h1V.val() < currentHour) {
-    h1V.addClass('.past')
-  } else if (h1V.val() > currentHour) {
-    h1V.addClass('.future')
+    // save in localStorage
+    localStorage.setItem(time, value);
+  });
+
+  function hourUpdater() {
+    // get current number of hours
+    var currentHour = moment().hours();
+
+    // loop over time blocks
+    $(".time-block").each(function() {
+      var blockHour = parseInt($(this).attr("id").split("-")[1]);
+
+      // check if we've moved past this time
+      if (blockHour < currentHour) {
+        $(this).addClass("past");
+      } 
+      else if (blockHour === currentHour) {
+        $(this).removeClass("past");
+        $(this).addClass("present");
+      } 
+      else {
+        $(this).removeClass("past");
+        $(this).removeClass("present");
+        $(this).addClass("future");
+      }
+    });
   }
 
-
-
-
-  // Put inputs for each time
-  $('#saveBtn4a').on('click', function (event) {
-    event.preventDefault()
-
-    var userVal = $('#userInput4a').val().trim()
-    var taskP = $('<p class="newTask">')
-
-    $('#task4am').append(taskP).append(userVal)
-
-    localStorage.setItem(moment().get('hour'), taskP)
-  })
-
-  $('#saveBtn5a').on('click', function (event) {
-    event.preventDefault()
-
-    var userVal = $('#userInput5a').val().trim()
-    var taskP = $('<p class="newTask">')
-
-    $('#task5am').append(taskP).append(userVal)
-
-    localStorage.setItem(moment().get('hour'), taskP)
-  })
-
-  $('#saveBtn6a').on('click', function (event) {
-    event.preventDefault()
-
-    var userVal = $('#userInput6a').val().trim()
-    var taskP = $('<p class="newTask">')
-
-    $('#task6am').append(taskP).append(userVal)
-
-    localStorage.setItem(moment().get('hour'), taskP)
-  })
-
-  $('#saveBtn7a').on('click', function (event) {
-    event.preventDefault()
-
-    var userVal = $('#userInput7a').val().trim()
-    var taskP = $('<p class="newTask">')
-
-    $('#task7am').append(taskP).append(userVal)
-  })
-
-  $('#saveBtn8a').on('click', function (event) {
-    event.preventDefault()
-
-    var userVal = $('#userInput8a').val().trim()
-    var taskP = $('<p class="newTask">')
-
-    $('#task8am').append(taskP).append(userVal)
-
-    localStorage.setItem(moment().get('hour'), taskP)
-  })
-
-  $('#saveBtn9a').on('click', function (event) {
-    event.preventDefault()
-
-    var userVal = $('#userInput9a').val().trim()
-    var taskP = $('<p class="newTask">')
-
-    $('#task9am').append(taskP).append(userVal)
-
-    localStorage.setItem(moment().get('hour'), taskP)
-  })
-
-  $('#saveBtn10a').on('click', function (event) {
-    event.preventDefault()
-
-    var userVal = $('#userInput10a').val().trim()
-    var taskP = $('<p class="newTask">')
-
-    $('#task10am').append(taskP).append(userVal)
-
-    localStorage.setItem(moment().get('hour'), taskP)
-  })
-
-  $('#saveBtn11a').on('click', function (event) {
-    event.preventDefault()
-
-    var userVal = $('#userInput11a').val().trim()
-    var taskP = $('<p class="newTask">')
-
-    $('#task11am').append(taskP).append(userVal)
-
-    localStorage.setItem(moment().get('hour'), taskP)
-  })
-
-  $('#saveBtn12p').on('click', function (event) {
-    event.preventDefault()
-
-    var userVal = $('#userInput12p').val().trim()
-    var taskP = $('<p class="newTask">')
-
-    $('#task12pm').append(taskP).append(userVal)
-
-    localStorage.setItem(moment().get('hour'), taskP)
-  })
-
-  $('#saveBtn1p').on('click', function (event) {
-    event.preventDefault()
-
-    var userVal = $('#userInput1p').val().trim()
-    var taskP = $('<p class="newTask">')
-
-    $('#task1pm').append(taskP).append(userVal)
-
-    localStorage.setItem(moment().get('hour'), taskP)
-  })
-
-  $('#saveBtn2p').on('click', function (event) {
-    event.preventDefault()
-
-    var userVal = $('#userInput2p').val().trim()
-    var taskP = $('<p class="newTask">')
-
-    $('#task2pm').append(taskP).append(userVal)
-
-    localStorage.setItem(moment().get('hour'), taskP)
-  })
-
-  $('#saveBtn3p').on('click', function (event) {
-    event.preventDefault()
-
-    var userVal = $('#userInput3p').val().trim()
-    var taskP = $('<p class="newTask">')
-
-    $('#task3pm').append(taskP).append(userVal)
-
-    localStorage.setItem(moment().get('hour'), taskP)
-  })
-
-  $('#saveBtn4p').on('click', function (event) {
-    event.preventDefault()
-
-    var userVal = $('#userInput4p').val().trim()
-    var taskP = $('<p class="newTask">')
-
-    $('#task4pm').append(taskP).append(userVal)
-
-    localStorage.setItem(moment().get('hour'), taskP)
-  })
-
-  $('#saveBtn5p').on('click', function (event) {
-    event.preventDefault()
-
-    var userVal = $('#userInput5p').val().trim()
-    var taskP = $('<p class="newTask">')
-
-    $('#task5pm').append(taskP).append(userVal)
-
-    localStorage.setItem(moment().get('hour'), taskP)
-  })
-
-  $('#saveBtn6p').on('click', function (event) {
-    event.preventDefault()
-
-    var userVal = $('#userInput6p').val().trim()
-    var taskP = $('<p class="newTask">')
-
-    $('#task6pm').append(taskP).append(userVal)
-
-    localStorage.setItem(moment().get('hour'), taskP)
-  })
-
-  $('#saveBtn7p').on('click', function (event) {
-    event.preventDefault()
-
-    var userVal = $('#userInput7p').val().trim()
-    var taskP = $('<p class="newTask">')
-
-    $('#task7pm').append(taskP).append(userVal)
-
-    localStorage.setItem(moment().get('hour'), taskP)
-  })
-
-  $('#saveBtn8p').on('click', function (event) {
-    event.preventDefault()
-
-    var userVal = $('#userInput8p').val().trim()
-    var taskP = $('<p class="newTask">')
-
-    $('#task8pm').append(taskP).append(userVal)
-
-    localStorage.setItem(moment().get('hour'), taskP)
-  })
-
-  $('#saveBtn9p').on('click', function (event) {
-    event.preventDefault()
-
-    var userVal = $('#userInput9p').val().trim()
-    var taskP = $('<p class="newTask">')
-
-    $('#task9pm').append(taskP).append(userVal)
-
-    localStorage.setItem(moment().get('hour'), taskP)
-  })
-
-  $('#saveBtn10p').on('click', function (event) {
-    event.preventDefault()
-
-    var userVal = $('#userInput10p').val().trim()
-    var taskP = $('<p class="newTask">')
-
-    $('#task10pm').append(taskP).append(userVal)
-
-    localStorage.setItem(moment().get('hour'), taskP)
-  })
-
-  $('#saveBtn11p').on('click', function (event) {
-    event.preventDefault()
-
-    var userVal = $('#userInput11p').val().trim()
-    var taskP = $('<p class="newTask">')
-
-    $('#task11pm').append(taskP).append(userVal)
-
-    localStorage.setItem(moment().get('hour'), taskP)
-  })
-
-  $('#saveBtn12a').on('click', function (event) {
-    event.preventDefault()
-
-    var userVal = $('#userInput12a').val().trim()
-    var taskP = $('<p class="newTask">')
-
-    $('#task12am').append(taskP).append(userVal)
-
-    localStorage.setItem(moment().get('hour'), taskP)
-  })
-
-  $('#saveBtn1a').on('click', function (event) {
-    event.preventDefault()
-
-    var userVal = $('#userInput1a').val().trim()
-    var taskP = $('<p class="newTask">')
-
-    $('#task1am').append(taskP).append(userVal)
-
-    localStorage.setItem(moment().get('hour'), taskP)
-  })
-
-  $('#saveBtn2a').on('click', function (event) {
-    event.preventDefault()
-
-    var userVal = $('#userInput2a').val().trim()
-    var taskP = $('<p class="newTask">')
-
-    $('#task2am').append(taskP).append(userVal)
-
-    localStorage.setItem(moment().get('hour'), taskP)
-  })
-
-  $('#saveBtn3a').on('click', function (event) {
-    event.preventDefault()
-
-    var userVal = $('#userInput3a').val().trim()
-    var taskP = $('<p class="newTask">')
-
-    $('#task3am').append(taskP).append(userVal)
-
-    localStorage.setItem(moment().get('hour'), taskP)
-  })
-
-
-})
+  hourUpdater();
+
+  // set up interval to check if current time needs to be updated
+  var interval = setInterval(hourUpdater, 15000);
+
+  // load any saved data from localStorage
+  $("#hour-9 .description").val(localStorage.getItem("hour-9"));
+  $("#hour-10 .description").val(localStorage.getItem("hour-10"));
+  $("#hour-11 .description").val(localStorage.getItem("hour-11"));
+  $("#hour-12 .description").val(localStorage.getItem("hour-12"));
+  $("#hour-13 .description").val(localStorage.getItem("hour-13"));
+  $("#hour-14 .description").val(localStorage.getItem("hour-14"));
+  $("#hour-15 .description").val(localStorage.getItem("hour-15"));
+  $("#hour-16 .description").val(localStorage.getItem("hour-16"));
+  $("#hour-17 .description").val(localStorage.getItem("hour-17"));
+
+  // display current day on page
+  $("#currentDay").text(moment().format("dddd, MMMM Do"));
+});
